@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2845","Verify X","","2026-10-02","passed","2026-10-02","","3.Locator_Commands\225_LC.ts","",""
+"","4145","viewer","chromium","2026-10-04","passed","2026-10-04","","50.Test_Excercises\1.Kura_Healthcare.ts","",""

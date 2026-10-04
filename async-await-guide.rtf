@@ -1,0 +1,97 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}{\f1 Consolas;}}
+\fs32\b Async and Await: A Beginner's Guide\b0\fs24\par
+\par
+\b What are async and await?\b0\par
+JavaScript often performs tasks that take time, such as opening a webpage, reading a file, calling an API, or loading an image. These tasks usually return a Promise. A Promise is like a receipt that says: "I will give you the result later."\par
+\par
+\b The async keyword\b0\par
+The async keyword marks a function as one that may perform asynchronous work. An async function always returns a Promise.\par
+\par
+\f1 async function sayHello() {\line
+  return "Hello";\line
+}\f0\par
+\par
+Even though the function returns a string, JavaScript wraps that result in a Promise.\par
+\par
+\b The await keyword\b0\par
+The await keyword means: "Wait for this Promise to finish, then give me its result." It normally appears inside an async function.\par
+\par
+\f1 async function getMessage() {\line
+  const message = await sayHello();\line
+  console.log(message);\line
+}\line
+\line
+getMessage();\f0\par
+\par
+The waiting happens inside getMessage; it does not freeze the entire JavaScript program.\par
+\par
+\b Playwright example\b0\par
+\f1 test('homepage title', async ({ page }) => {\line
+  await page.goto('https://playwright.dev/');\line
+  await expect(page).toHaveTitle(\line
+    'Fast and reliable end-to-end testing for modern web apps | Playwright'\line
+  );\line
+});\f0\par
+\par
+async means the test contains actions that take time. await page.goto means wait until navigation finishes. await expect means wait while Playwright checks the title.\par
+\par
+\b When should you use async and await?\b0\par
+Use them when working with a Promise:\par
+\f1 const response = await fetch('https://example.com');\line
+const data = await response.json();\line
+await page.click('button');\line
+await page.goto('https://example.com');\f0\par
+\par
+You do not need them for immediate calculations:\par
+\f1 const sum = 2 + 3;\line
+const name = 'Rohan';\line
+console.log(name);\f0\par
+\par
+\b Sequential work\b0\par
+Use separate await statements when the second action depends on the first:\par
+\f1 const response = await fetch('/user');\line
+const user = await response.json();\line
+console.log(user.name);\f0\par
+\par
+In Playwright, login steps usually need to happen in order:\par
+\f1 await page.goto('/login');\line
+await page.fill('#username', 'rohan');\line
+await page.click('#submit');\f0\par
+\par
+\b Parallel work\b0\par
+If tasks do not depend on each other, run them together with Promise.all. This can be faster:\par
+\f1 const [users, products] = await Promise.all([\line
+  fetch('/users'),\line
+  fetch('/products')\line
+]);\f0\par
+\par
+\b Handling errors\b0\par
+Use try and catch when asynchronous work can fail:\par
+\f1 async function loadPage() {\line
+  try {\line
+    const response = await fetch('https://example.com');\line
+    if (!response.ok) {\line
+      throw new Error('Request failed');\line
+    }\line
+    return await response.text();\line
+  } catch (error) {\line
+    console.log('Something went wrong:', error);\line
+  }\line
+}\f0\par
+\par
+\b Common mistakes\b0\par
+1. Forgetting await: const data = fetch('/users') gives you a Promise, not the actual data. Use const data = await fetch('/users').\par
+2. Using await outside an async function: add async to the containing function.\par
+3. Waiting unnecessarily: use Promise.all for independent tasks instead of waiting for each one sequentially.\par
+\par
+\b Easy rule to remember\b0\par
+Use async on a function that performs waiting work. Use await before a Promise when you need its result. Use multiple await statements when steps must happen in order. Use Promise.all when independent tasks can happen at the same time. Use try and catch when an operation can fail.\par
+\par
+\b A complete Playwright pattern\b0\par
+\f1 test('my test', async ({ page }) => {\line
+  await page.goto('https://example.com');\line
+  await page.click('button');\line
+  await expect(page).toHaveTitle('Example');\line
+});\f0\par
+}
