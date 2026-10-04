@@ -1,0 +1,472 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: 50.Test_Excercises\2.Automate_Webtable.ts >> Verify Webtable Functionality
+- Location: 50.Test_Excercises\2.Automate_Webtable.ts:3:5
+
+# Error details
+
+```
+Error: expect(page).toHaveTitle(expected) failed
+
+Expected pattern: /Webtable/i
+Received string:  "Web Table Employee Directory — The Testing Academy"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveTitle" with timeout 5000ms
+    13 × locator resolved to <html lang="en" data-theme="light">…</html>
+       - unexpected value "Web Table Employee Directory — The Testing Academy"
+
+```
+
+```yaml
+- 'region "Announcement: Playwright Automation Mastery new batch"':
+  - text: LIVE Playwright Automation Mastery New batch | Starts 28 Sept · Mon, Wed, Fri · 7 AM IST |
+  - emphasis: UP TO 10% OFF
+  - text: Code
+  - code: PROMODE
+  - link "Enroll":
+    - /url: https://class.thetestingacademy.com/playwright-automation-mastery-course
+  - link "Chat on WhatsApp":
+    - /url: https://sdet.live/WhatsApp
+    - text: ☎
+  - button "Dismiss banner": ×
+- complementary "Practice navigation":
+  - link "T The Testing Academy":
+    - /url: ./index.html
+    - text: T
+    - strong: The Testing Academy
+  - button "Toggle sidebar"
+  - searchbox /
+  - text: /
+  - navigation:
+    - button "JavaScript" [expanded]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: ./learn/javascript/index.html
+      - listitem:
+        - link "Foundations (ch 1-4)":
+          - /url: ./learn/javascript/foundations.html
+      - listitem: Control flow (ch 5-7) soon
+      - listitem: Data structures (ch 8-12) soon
+      - listitem: Functions (ch 9 + 13) soon
+      - listitem: Async (ch 14-15) soon
+      - listitem: OOP (ch 16-17) soon
+      - listitem:
+        - link "JS notes":
+          - /url: ./notes.html
+    - button "TypeScript" [expanded]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: ./learn/typescript/index.html
+      - listitem:
+        - link "Setup + basics soon":
+          - /url: ./learn/typescript/setup.html
+      - listitem:
+        - link "Types deep dive soon":
+          - /url: ./learn/typescript/types.html
+      - listitem:
+        - link "Interfaces soon":
+          - /url: ./learn/typescript/interfaces.html
+      - listitem:
+        - link "Enums soon":
+          - /url: ./learn/typescript/enums.html
+      - listitem:
+        - link "Generics soon":
+          - /url: ./learn/typescript/generics.html
+      - listitem:
+        - link "Access modifiers + classes soon":
+          - /url: ./learn/typescript/classes.html
+    - button "Playwright fundamentals" [expanded]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: ./learn/playwright-fundamentals/overview.html
+      - listitem:
+        - link "Architecture deep dive":
+          - /url: ./playwright-e2e-architecture-blueprint.html
+      - listitem:
+        - link "LangChain agent guide":
+          - /url: ./playwright-agent-with-langchain.html
+      - listitem:
+        - link "Playwright MCP tutorial":
+          - /url: ./playwright-mcp.html
+      - listitem:
+        - link "AI agents guide":
+          - /url: ./playwright-ai-agents.html
+      - listitem:
+        - link "Curriculum hub":
+          - /url: ./learn/playwright-fundamentals/index.html
+      - listitem:
+        - link "Multiple Element Filter":
+          - /url: ./multiple_element_filter.html
+      - listitem:
+        - link "Web Table Directory":
+          - /url: ./webtable.html
+      - listitem:
+        - link "QA Profile Form":
+          - /url: ./tables/practice.html
+      - listitem:
+        - link "Companies Table":
+          - /url: ./tables/webtable.html
+      - listitem:
+        - link "Tall Buildings Table":
+          - /url: ./tables/webtable1.html
+      - listitem:
+        - link "Custom Dropdowns":
+          - /url: ./tables/dropdowns.html
+      - listitem:
+        - link "Select Box Variants":
+          - /url: ./tables/select-boxes.html
+      - listitem:
+        - link "Sortable Admin Table":
+          - /url: ./tables/sortable.html
+      - listitem:
+        - link "Cricket Scorecard":
+          - /url: ./tables/scorecard.html
+      - listitem:
+        - link "Frames overview":
+          - /url: ./frames/index.html
+      - listitem:
+        - link "Multi-frame frameset":
+          - /url: ./frames/multi-frames.html
+      - listitem:
+        - link "Nested iframes":
+          - /url: ./frames/nested-iframes.html
+      - listitem:
+        - link "Courses frameset":
+          - /url: ./frames/courses-frameset.html
+      - listitem:
+        - link "SVG locators":
+          - /url: ./widgets/svg.html
+      - listitem:
+        - link "Shadow DOM":
+          - /url: ./widgets/shadow-dom.html
+      - listitem:
+        - link "Calendar / date picker":
+          - /url: ./widgets/calendar.html
+      - listitem:
+        - link "Drag and drop":
+          - /url: ./widgets/dnd.html
+      - listitem:
+        - link "Toasts and notifications":
+          - /url: ./widgets/toasts.html
+      - listitem:
+        - link "Native dialogs":
+          - /url: ./widgets/dialogs.html
+      - listitem:
+        - link "Hover menus":
+          - /url: ./widgets/hover-menu.html
+      - listitem:
+        - link "Right-click menu":
+          - /url: ./widgets/context-menu.html
+      - listitem:
+        - link "Keyboard navigation":
+          - /url: ./widgets/keyboard-form.html
+      - listitem:
+        - link "Windows and Tabs":
+          - /url: ./widgets/windows-tabs.html
+      - listitem:
+        - link "Upload and Download":
+          - /url: ./widgets/upload-download.html
+      - listitem:
+        - link "Scroll":
+          - /url: ./widgets/scroll.html
+      - listitem:
+        - link "Assertions (expect)":
+          - /url: ./widgets/expect.html
+      - listitem:
+        - link "Test modifiers, hooks, data":
+          - /url: ./widgets/test-modifiers.html
+      - listitem:
+        - link "Data-driven + POM":
+          - /url: ./widgets/data-driven.html
+      - listitem:
+        - link "Network interception":
+          - /url: ./network/intercept.html
+      - listitem:
+        - link "TTACart demo":
+          - /url: ./ttacart/index.html
+      - listitem:
+        - link "TTAStays booking":
+          - /url: ./booking/index.html
+      - listitem:
+        - link "Advance Playwright framework":
+          - /url: ./advance-framework.html
+    - button "Playwright API Testing" [expanded]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: ./learn/playwright-api/index.html
+      - listitem:
+        - link "CRUD basics":
+          - /url: ./learn/playwright-api/crud.html
+      - listitem:
+        - link "Auth + Schema":
+          - /url: ./learn/playwright-api/auth-schema.html
+      - listitem:
+        - link "Network monitoring":
+          - /url: ./learn/playwright-api/network.html
+    - button "Playwright BDD (Cucumber)" [expanded]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: ./learn/playwright-cucumber/index.html
+      - listitem:
+        - link "Setup + first run":
+          - /url: ./learn/playwright-cucumber/setup.html
+      - listitem:
+        - link "Data-driven":
+          - /url: ./learn/playwright-cucumber/data-driven.html
+      - listitem:
+        - link "CI + tags + env":
+          - /url: ./learn/playwright-cucumber/ci-tags-env.html
+    - button "Playwright DevOps" [expanded]
+    - list:
+      - listitem:
+        - link "NPM Registry (JFrog/Nexus)":
+          - /url: ./learn/playwright-registry/index.html
+      - listitem:
+        - link "Docker setup":
+          - /url: ./learn/playwright-docker/index.html
+      - listitem:
+        - link "Sharding multi-container":
+          - /url: ./learn/playwright-shard/index.html
+    - button "Playwright AI" [expanded]
+    - list:
+      - listitem:
+        - link "Curriculum hub":
+          - /url: ./learn/playwright-ai-agents/index.html
+      - listitem:
+        - link "Framework + AI (V2)":
+          - /url: ./advance-framework-ai.html
+      - listitem:
+        - link "TTACart + AI live demo":
+          - /url: ./ttacart-ai/index.html
+      - listitem:
+        - link "TTA AI Chat sandbox":
+          - /url: ./ai-chat/index.html
+    - button "Playwright MCP" [expanded]
+    - list:
+      - listitem:
+        - link "Curriculum hub":
+          - /url: ./learn/playwright-mcp/index.html
+    - button "Playwright CLI" [expanded]
+    - list:
+      - listitem:
+        - link "Curriculum hub":
+          - /url: ./learn/playwright-cli/index.html
+      - listitem:
+        - link "SnapLocator (Chrome ext)":
+          - /url: ./snaplocator.html
+  - text: © The Testing Academy · 2026
+  - button "Toggle dark mode"
+- banner:
+  - button "Open sidebar"
+  - link "Practice":
+    - /url: ./index.html
+  - strong: Web Table Directory
+  - text: 10 rows
+  - button "Toggle dark mode"
+- main:
+  - region "Web Table Employee Directory":
+    - text: Locator practice · Web table
+    - heading "Web Table Employee Directory" [level=1]:
+      - text: Web Table
+      - emphasis: Employee Directory
+    - paragraph:
+      - text: A realistic employee table built for practising XPath sibling traversal, CSS
+      - code: :has()
+      - text: ", checkbox selection, and extracting row data. The data is intentionally Indianised so the names feel familiar."
+    - strong: "10"
+    - text: Employee rows
+    - strong: "7"
+    - text: Visible columns
+    - strong: "3"
+    - text: Selector patterns
+    - strong: "0"
+    - text: External APIs
+  - region "Web table practice workspace":
+    - heading "CloudOps India Employee Directory" [level=2]
+    - paragraph: Use this table to practise locating rows, checkboxes, and sibling columns.
+    - text: Practice page
+    - searchbox "Search employee table"
+    - button "Select Cloud QA"
+    - button "Clear"
+    - table "Employee Management System table":
+      - rowgroup:
+        - row "Select Username Employee Name User Role City Project Status":
+          - columnheader "Select"
+          - columnheader "Username"
+          - columnheader "Employee Name"
+          - columnheader "User Role"
+          - columnheader "City"
+          - columnheader "Project"
+          - columnheader "Status"
+      - rowgroup:
+        - row "Select Aarav.Sharma Aarav.Sharma AS Aarav Sharma EMP-1001 QA Engineer Pune Cloud QA Active":
+          - cell "Select Aarav.Sharma":
+            - checkbox "Select Aarav.Sharma"
+          - cell "Aarav.Sharma"
+          - cell "AS Aarav Sharma EMP-1001":
+            - text: AS
+            - strong: Aarav Sharma
+            - text: EMP-1001
+          - cell "QA Engineer"
+          - cell "Pune"
+          - cell "Cloud QA"
+          - cell "Active"
+        - row "Select Priya.Nair Priya.Nair PN Priya Nair EMP-1002 Product Owner Bengaluru Nimbus CRM Active":
+          - cell "Select Priya.Nair":
+            - checkbox "Select Priya.Nair"
+          - cell "Priya.Nair"
+          - cell "PN Priya Nair EMP-1002":
+            - text: PN
+            - strong: Priya Nair
+            - text: EMP-1002
+          - cell "Product Owner"
+          - cell "Bengaluru"
+          - cell "Nimbus CRM"
+          - cell "Active"
+        - row "Select Rohan.Mehta Rohan.Mehta RM Rohan Mehta EMP-1003 SDET Lead Gurugram Cloud QA Active":
+          - cell "Select Rohan.Mehta":
+            - checkbox "Select Rohan.Mehta"
+          - cell "Rohan.Mehta"
+          - cell "RM Rohan Mehta EMP-1003":
+            - text: RM
+            - strong: Rohan Mehta
+            - text: EMP-1003
+          - cell "SDET Lead"
+          - cell "Gurugram"
+          - cell "Cloud QA"
+          - cell "Active"
+        - row "Select Ananya.Iyer Ananya.Iyer AI Ananya Iyer EMP-1004 DevOps Engineer Chennai Monsoon Pay Onboarding":
+          - cell "Select Ananya.Iyer":
+            - checkbox "Select Ananya.Iyer"
+          - cell "Ananya.Iyer"
+          - cell "AI Ananya Iyer EMP-1004":
+            - text: AI
+            - strong: Ananya Iyer
+            - text: EMP-1004
+          - cell "DevOps Engineer"
+          - cell "Chennai"
+          - cell "Monsoon Pay"
+          - cell "Onboarding"
+        - row "Select Kabir.Khan Kabir.Khan KK Kabir Khan EMP-1005 Security Tester Hyderabad Udaan Risk Active":
+          - cell "Select Kabir.Khan":
+            - checkbox "Select Kabir.Khan"
+          - cell "Kabir.Khan"
+          - cell "KK Kabir Khan EMP-1005":
+            - text: KK
+            - strong: Kabir Khan
+            - text: EMP-1005
+          - cell "Security Tester"
+          - cell "Hyderabad"
+          - cell "Udaan Risk"
+          - cell "Active"
+        - row "Select Meera.Rao Meera.Rao MR Meera Rao EMP-1006 Automation Architect Mumbai Cloud Ledger Active":
+          - cell "Select Meera.Rao":
+            - checkbox "Select Meera.Rao"
+          - cell "Meera.Rao"
+          - cell "MR Meera Rao EMP-1006":
+            - text: MR
+            - strong: Meera Rao
+            - text: EMP-1006
+          - cell "Automation Architect"
+          - cell "Mumbai"
+          - cell "Cloud Ledger"
+          - cell "Active"
+        - row "Select Vikram.Singh Vikram.Singh VS Vikram Singh EMP-1007 API Tester Noida Bharat API Inactive":
+          - cell "Select Vikram.Singh":
+            - checkbox "Select Vikram.Singh"
+          - cell "Vikram.Singh"
+          - cell "VS Vikram Singh EMP-1007":
+            - text: VS
+            - strong: Vikram Singh
+            - text: EMP-1007
+          - cell "API Tester"
+          - cell "Noida"
+          - cell "Bharat API"
+          - cell "Inactive"
+        - row "Select Neha.Patel Neha.Patel NP Neha Patel EMP-1008 Release Manager Ahmedabad Cloud Retail Active":
+          - cell "Select Neha.Patel":
+            - checkbox "Select Neha.Patel"
+          - cell "Neha.Patel"
+          - cell "NP Neha Patel EMP-1008":
+            - text: NP
+            - strong: Neha Patel
+            - text: EMP-1008
+          - cell "Release Manager"
+          - cell "Ahmedabad"
+          - cell "Cloud Retail"
+          - cell "Active"
+        - row "Select Ishaan.Das Ishaan.Das ID Ishaan Das EMP-1009 Manual Tester Kolkata Cloud QA Onboarding":
+          - cell "Select Ishaan.Das":
+            - checkbox "Select Ishaan.Das"
+          - cell "Ishaan.Das"
+          - cell "ID Ishaan Das EMP-1009":
+            - text: ID
+            - strong: Ishaan Das
+            - text: EMP-1009
+          - cell "Manual Tester"
+          - cell "Kolkata"
+          - cell "Cloud QA"
+          - cell "Onboarding"
+        - row "Select Sana.Qureshi Sana.Qureshi SQ Sana Qureshi EMP-1010 Data QA Analyst Indore Sky Analytics Active":
+          - cell "Select Sana.Qureshi":
+            - checkbox "Select Sana.Qureshi"
+          - cell "Sana.Qureshi"
+          - cell "SQ Sana Qureshi EMP-1010":
+            - text: SQ
+            - strong: Sana Qureshi
+            - text: EMP-1010
+          - cell "Data QA Analyst"
+          - cell "Indore"
+          - cell "Sky Analytics"
+          - cell "Active"
+    - text: 10 visible rows 0 selected Selected usernames will appear here.
+    - complementary "Lesson and solution":
+      - heading "What students should practise" [level=2]
+      - paragraph: The page is the problem. Try these on your own first — the solution stays hidden until you reveal it.
+      - list:
+        - listitem: Click the checkbox beside a username using XPath preceding-sibling.
+        - listitem:
+          - text: Find a complete row using CSS
+          - code: tr:has(td:text(...))
+          - text: .
+        - listitem: Read all the data after a username using following-sibling columns.
+        - listitem: Filter rows by team, city, role, or status without relying on hardcoded row numbers.
+      - group:
+        - strong: Playwright solution
+        - text: Try the practice first — reveal the snippet only when you need a hint. Show solution
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test('Verify Webtable Functionality', async ({ page }) => {
+  4  |   await page.goto('https://app.thetestingacademy.com/playwright/webtable');
+> 5  |   await expect(page).toHaveTitle(/Webtable/i);
+     |                      ^ Error: expect(page).toHaveTitle(expected) failed
+  6  | 
+  7  |   const rowCount = 11;
+  8  |   const colCount = 7;
+  9  | 
+  10 |   for (let i = 2; i <= rowCount; i++) {
+  11 |     for (let j = 2; j <= colCount; j++) {
+  12 |       const cellText = await page.locator(`//table[@id='Employee Management System table']/tbody/tr[${i}]/td[${j}]`).textContent();
+  13 |       console.log(`Row ${i}, Column ${j}: ${cellText}`);
+  14 |     }
+  15 |   }
+  16 | });
+```

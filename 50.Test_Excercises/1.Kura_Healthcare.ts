@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify Kura Healthcare - Make Appointment functionality', async ({ page }) => {
+test('Verify Webtable Functionality', async ({ page }) => {
   await page.goto('https://katalon-demo-cura.herokuapp.com/');
   await expect(page).toHaveTitle(/CURA Healthcare Service/);
 
